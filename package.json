@@ -5,7 +5,9 @@
   "main": "index.ts",
   "scripts": {
     "test": "",
-    "start": "ts-node-dev --max-old-space-size=2048 --respawn --transpile-only --exit-child --watch src src/index.ts",
+    "start": "ts-node src/index.ts",
+    "nodemon": "nodemon",
+    "dev": "ts-node-dev --trace-warnings --max-old-space-size=2048 --respawn --transpile-only --exit-child --watch src src/index.ts",
     "build": "tsc",
     "serve": "node ./build/index.js"
   },
@@ -26,5 +28,13 @@
     "esm": "^3.2.25",
     "ts-node-dev": "^1.1.8"
   },
-  "type": "commonjs"
+  "type": "commonjs",
+  "types": "./index.d.ts",
+  "typesVersions": {
+    ">=3.1": {
+      "*": [
+        "ts3.1/*"
+      ]
+    }
+  }
 }

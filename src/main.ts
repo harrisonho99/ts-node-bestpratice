@@ -1,4 +1,4 @@
-import { entry } from './patterns/stream';
+import { entry } from './patterns/TCP';
 
 main(entry);
 
