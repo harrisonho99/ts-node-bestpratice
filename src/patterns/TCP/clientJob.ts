@@ -5,7 +5,3 @@ process.on('message', function (config: any) {
   const client = new Client(config.port, config.host, config.timeout);
   client.start();
 });
-
-if (typeof process.send === 'function') {
-  process.send({ hello: 'from child process' });
-}

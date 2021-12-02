@@ -10,21 +10,15 @@ class Server {
   }
 
   connectionListener(socket: Socket, timeout: number) {
-    socket.setTimeout(timeout);
-
     socket.on('error', (error) => {
       Log.err(error);
       socket.destroy(error);
     });
 
-    socket.on('timeout', () => {
-      socket.end();
-    });
-
-    socket.write('hello from TCP server!');
-
-    socket.end();
-
+    setInterval(() => {
+      socket.write(JSON.stringify({ toppic: 'server event' }));
+    }, 3000);
+    
     socket.pipe(socket);
 
     return this;
