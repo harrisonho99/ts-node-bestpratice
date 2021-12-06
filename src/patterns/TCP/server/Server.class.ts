@@ -16,9 +16,9 @@ class Server {
     });
 
     setInterval(() => {
-      socket.write(JSON.stringify({ toppic: 'server event' }));
-    }, 3000);
-    
+      socket.write(JSON.stringify({ toppic: 'create random', value: Math.random() }));
+    }, 1000);
+
     socket.pipe(socket);
 
     return this;

@@ -15,7 +15,7 @@ class Client {
     if (typeof this.socket !== 'undefined') {
       this.socket.on('end', this.onRequestTerminated);
       this.socket.on('data', (data) => {
-        Log.cyan('client recived: ', JSON.stringify({ data: JSON.parse(data.toString()) }));
+        Log.blue('client recived: ', JSON.stringify({ data: JSON.parse(data.toString()) }));
       });
     }
   }
